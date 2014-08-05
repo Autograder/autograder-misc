@@ -16,6 +16,13 @@
         <url>https://github.com/Autograder</url>
     </organization>
 
+    <distributionManagement>
+        <repository>
+            <id>ieng6-cs12x1</id>
+            <url>sftp://ieng6.ucsd.edu/home/linux/ieng6/cs12x/cs12x1/.ag/mvn-repo/</url>
+        </repository>
+    </distributionManagement>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -30,6 +37,14 @@
     </dependencies>
 
     <build>
+        <extensions>
+            <!-- For deploying artifacts to ieng6. -->
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ssh</artifactId>
+                <version>2.6</version>
+            </extension>
+        </extensions>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
