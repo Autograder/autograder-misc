@@ -13,7 +13,7 @@ public class GsonUtils {
 
     public static Gson createGson() {
         GsonBuilder builder = new GsonBuilder();
-        builder.setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
+        builder.setDateFormat(DateUtils.PATTERN);
 
         return builder.create();
     }
