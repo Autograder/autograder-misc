@@ -16,7 +16,7 @@ public class ResourceUtils {
         URI uri;
 
         try {
-            uri = clazz.getClassLoader().getResource(name).toURI();
+            uri = clazz.getResource(name).toURI();
         } catch (URISyntaxException e) {
             throw new RuntimeException(e);
         }
