@@ -11,27 +11,27 @@ import java.util.concurrent.TimeUnit;
 public class DateUtils {
     public static final String ISO8601_FORMAT = "yyyy-MM-dd'T'HH:mm:ssZ";
     public static final String READABLE_FORMAT = "EEE MM/dd/yy hh:mm a z";
-    private static final DateFormat dateIso6801Format = new SimpleDateFormat(ISO8601_FORMAT);
+    private static final DateFormat dateIso8601Format = new SimpleDateFormat(ISO8601_FORMAT);
     private static final DateFormat dateReadableFormat = new SimpleDateFormat(READABLE_FORMAT);
 
-    public static String formatIso6801(Date date) {
-        return dateIso6801Format.format(date);
+    public static String formatIso8601(Date date) {
+        return dateIso8601Format.format(date);
     }
 
     public static String formatReadable(Date date) {
         return dateReadableFormat.format(date);
     }
 
-    public static Date parseIso6801(String source) throws ParseException {
-        return dateIso6801Format.parse(source);
+    public static Date parseIso8601(String source) throws ParseException {
+        return dateIso8601Format.parse(source);
     }
 
     public static Calendar now() {
         return GregorianCalendar.getInstance();
     }
 
-    public static String nowIso6801() {
-        return formatIso6801(now().getTime());
+    public static String nowIso8601() {
+        return formatIso8601(now().getTime());
     }
 
     public static String nowReadable() {
